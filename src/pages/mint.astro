@@ -1,0 +1,20 @@
+---
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+import EmpyState from "../components/EmpyState.astro";
+import WagmiApp from "../web3stuff/WagmiApp";
+import { Media } from "accessible-astro-components";
+---
+
+<DefaultLayout title="Mint">
+  <section>
+    <h1>Mint NFT</h1>
+    <p class="size-20">Start your own collection!</p>
+  </section>
+  <section class="margin-32">
+    <div class="space-content">
+      <EmpyState>Start by minting some NFT!</EmpyState>
+      <WagmiApp client:load />
+      <Media classes="media radius-large elevation-400" src="" />
+    </div>
+  </section>
+</DefaultLayout>

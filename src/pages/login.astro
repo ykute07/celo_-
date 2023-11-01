@@ -1,0 +1,199 @@
+---
+import LoginLayout from "../layouts/LoginLayout.astro";
+import { Notification } from "accessible-astro-components";
+import { Icon } from "astro-icon";
+---
+
+<LoginLayout title="Login">
+  <section class="bg-neutral-100">
+    <div class="login">
+      <div class="login__inner reveal h-screen">
+        <div class="inner__brand">
+          <div class="bg-neutral-900 radius-large space-8">
+            <img
+              class="brand__logo radius-large"
+              src="https://img.icons8.com/color/12x/mona-lisa.png"
+              alt=""
+            />
+          </div>
+          <div class="brand__text">
+            <span>MINIHUB Arthouse</span>
+            <span>Exhibit your NFT!</span>
+          </div>
+        </div>
+        <div class="inner__form space-content">
+          <Notification>
+            <Icon pack="majesticons" name="information-circle-line" /><p class="size-14">
+              Welcome to Arthouse 
+              <button onclick="location.href='/'" class="arthouse-button" style="display: inline-block; padding: 8px 10px; background-color: #FDB813; color: #FFFFFF; font-size: 14px; font-weight: 600; border: none; border-radius: 10px; text-align: center; text-decoration: none; cursor: pointer; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); transition: all 0.3s ease-in-out;" >
+                <strong>Go to homepage</strong>
+              </button>
+                <svg class="w-5 h-5 inline-block mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22a10 10 0 0 1-6.33-2.29c-.43-.36-.67-.89-.67-1.44V16a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2.27c0 .55-.24 1.08-.67 1.44A10 10 0 0 1 12 22z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                <span class="font-semibold text-xs uppercase tracking-wider text-white">Go to homepage</span>
+              </button>
+            </p>
+          </Notification>
+          <div class="space-content"></div>
+        </div>
+        <div class="login__footer text-neutral-700">
+          <p>
+            <em
+              >Check my github!<a href="https://github.com/bezata">bezata</a
+              ></em
+            >
+          </p>
+        </div>
+      </div>
+      <div class="login__background h-screen"></div>
+    </div>
+  </section>
+</LoginLayout>
+
+<style lang="scss">
+  
+  @use "../assets/scss/base/breakpoint" as *;
+  @use "../assets/scss/base/size" as *;
+  @use "../assets/scss/base/space" as *;
+  @import url('https://fonts.cdnfonts.com/css/artistic');
+  
+  .arthouse-button {
+  display: inline-block;
+  padding: 6px 10px;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 0px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+  background-image: linear-gradient(to right, #FFC371, #FF5F6D);
+}
+
+.arthouse-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.arthouse-button strong {
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+}
+
+.arthouse-button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: transparent;
+  border-radius: inherit;
+  transform: scaleX(0.8) scaleY(0.5);
+  opacity: 0.4;
+  transition: all 0.3s ease-in-out;
+}
+
+.arthouse-button:hover::before {
+  transform: scaleX(1.2) scaleY(1);
+  opacity: 0.2;
+  background-color: #FFFFFF;
+}
+
+.arthouse-button:active {
+  transform: translateY(0px);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+  .login {
+    display: grid;
+
+    @include breakpoint(medium) {
+      grid-template-columns: 550px 2fr;
+    }
+
+    .login__inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: $space-48;
+      padding: $space-24;
+      z-index: 1;
+
+      @include breakpoint(medium) {
+        padding: $space-48 $space-96;
+        box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+      }
+    }
+
+    .inner__brand {
+      display: flex;
+      align-items: center;
+      gap: $space-16;
+    }
+
+    .brand__logo {
+      max-width: 50px;
+    }
+
+    .brand__text {
+      display: flex;
+      flex-direction: column;
+      gap: $space-2;
+
+      > :first-child {
+        font-weight: bold;
+        @include size-20;
+      }
+
+      > :last-child {
+        @include size-14;
+      }
+    }
+
+    .login__background {
+      display: none;
+      background-color: #000;
+      background-image: url("https://gateway.pinata.cloud/ipfs/QmeAbvUZjWYnrMHsyARpGcVrc5TC5uSQRR3TRU5e8ZZ4xV?_gl=1*1frwwuf*rs_ga*MDY1MDgxY2YtZDQxMy00MzNmLWE1ODctNDk0MjdkZDQzMWM2*rs_ga_5RMPXG14TE*MTY4MzU0MjI0Mi4xLjEuMTY4MzU0MjI1Mi41MC4wLjA.");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      @include breakpoint(medium) {
+        display: block;
+      }
+    }
+
+    .reveal {
+      animation: reveal 0.3s ease-in;
+    }
+
+    .login__footer {
+      padding-bottom: $space-24;
+
+      @include breakpoint(medium) {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  @keyframes reveal {
+    0% {
+      opacity: 0;
+      transform: translateY(-1rem);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
