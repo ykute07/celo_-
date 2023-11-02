@@ -152,7 +152,7 @@ function NFTHUBComponent() {
             Listing Fee:
           </p>
           <p className="font-bold ml-2 px-1 text-gray-500 text-xs transform origin-left transition-all">
-            {listingPrice.toString()} GCELO
+            {listingPrice.toString()} CELO
           </p>
         </div>
         <button
