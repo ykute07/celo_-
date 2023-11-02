@@ -44,4 +44,4 @@ This project is licensed under the MIT License. See the `LICENSE` file for more 
 
 ![website](https://user-images.githubusercontent.com/61169260/233838753-6ab61ee2-148b-4fe4-84b9-e48e3155cf2b.png)
 
-# https://bezata.netlify.app/login
+# https://minihubs.netlify.app/
